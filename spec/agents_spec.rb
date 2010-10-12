@@ -50,4 +50,8 @@ describe Agent do
   test :Firefox, '3.0', :Linux,         :gecko, '2008062315', 'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9) Gecko/2008062315 (Gentoo) Firefox/3.0'
   test :Firefox, '2.0', :Linux,         :gecko, '20061202',   'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.8.1) Gecko/20061202 Firefox/2.0'
 
+  test :MobileSafari, '3', :iPad,     :webkit, '531.21.10', 'Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko)'
+  test :MobileSafari, '4.0', :iPhone, :webkit, '528.18',    'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_1_2 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7D11 Safari/528.16'
+
+  test :Outlook, '14.0', :'Windows XP', :outlook, '14.0.4536', 'Microsoft Office/14.0 (Windows NT 5.1; Microsoft Outlook 14.0.4536; Pro; MSOffice 14)'
 end

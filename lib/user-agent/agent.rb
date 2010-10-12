@@ -93,6 +93,8 @@ class Agent
     when :Safari ; $1 if string =~ /version\/([\d\w\.\-]+)/i
     when :PS3    ; $1 if string =~ /([\d\w\.\-]+)\)\s*$/i
     when :PSP    ; $1 if string =~ /([\d\w\.\-]+)\)?\s*$/i
+    when :Outlook; $1 if string =~ /Microsoft Office\/([\d\w\.\-]+)/i
+    when :MobileSafari ; (string =~ /Version\/([\d\w\.\-]+)/i) ? $1 : '3'
     else           $1 if string =~ /#{name}[\/ ]([\d\w\.\-]+)/i
     end
   end
@@ -109,6 +111,7 @@ class Agent
     when /presto/i    ; :presto
     when /gecko/i     ; :gecko
     when /msie/i      ; :msie
+    when /msoffice/i  ; :outlook
     else                :unknown
     end
   end
@@ -128,6 +131,8 @@ class Agent
     when /wii/i                  ; :Wii
     when /playstation 3/i        ; :Playstation
     when /playstation portable/i ; :Playstation
+    when /iPad/i                 ; :iPad
+    when /iPhone/i               ; :iPhone
     else                         ; :Unknown
     end
   end
@@ -139,12 +144,15 @@ class Agent
     case string
     when /konqueror/i            ; :Konqueror
     when /chrome/i               ; :Chrome
+    when /(ipad|iphone)/i        ; :MobileSafari
     when /safari/i               ; :Safari
     when /msie/i                 ; :IE
     when /opera/i                ; :Opera
     when /playstation 3/i        ; :PS3
     when /playstation portable/i ; :PSP
     when /firefox/i              ; :Firefox
+    when /AppleWebKit/i          ; :WebKit
+    when /Microsoft Outlook/i    ; :Outlook
     else                         ; :Unknown
     end
   end
